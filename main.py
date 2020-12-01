@@ -1,21 +1,10 @@
-import flask
-from flask import request, jsonify
+from flask import Flask
+app = Flask(__name__)
 
-app = flask.Flask(__name__)
 
-Colors = [
-    {
-     'r': 255,
-     'g': 255,
-     'b': 0
-    }
-]
-@app.route('/', methods=['GET'])
-def home():
-    return "<h1>Color archive for plick webapp</h1><p>This site is a prototype API for plick app to test api integration</p>"
+@app.route('/')
+def hello():
+    return "Hello World!"
 
-@app.route('/api/v1/resources/colors/all', methods=['GET'])
-def api_all():
-    return jsonify(Colors)
-
-app.run()
+if __name__ == '__main__':
+    app.run()
