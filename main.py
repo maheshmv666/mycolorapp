@@ -17,3 +17,5 @@ def home():
 @app.route('/api/v1/resources/colors/all', methods=['GET'])
 def api_all():
     return jsonify(Colors)
+
+app.run()
